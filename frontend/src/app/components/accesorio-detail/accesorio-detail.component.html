@@ -1,0 +1,59 @@
+<!-- Página de detalle del Accesorio -->
+@defer (when accesorio){
+<main class="container-fluid py-5 bg-dark m-0 p-0">
+  <div class="card shadow-lg border-0 mx-auto"
+    style="background: linear-gradient(rgb(102, 102, 102), rgb(51, 51, 51)) 33% center; max-width: 1140px; width: 90%;">
+    <div class="row g-0">
+
+      <div class="col-md-6">
+        <p-image [src]="accesorio?.image" [alt]="accesorio?.name" [preview]="true"
+          [imageStyle]="{'max-width': '100%', 'height': 'auto'}" class="img-fluid rounded-start">
+        </p-image>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-body p-4">
+          <h2 class="card-title fw-bold mb-3 text-light" style="font-size: 2rem;">{{accesorio?.name}}</h2>
+          <h4 class="text-primary mb-3" style="font-size: 1.5rem;">{{accesorio?.price | currency: 'EUR'}}</h4>
+          <p class="card-text text-light" style="font-size: 1.2rem;">{{accesorio?.description}}</p>
+
+          <div class="d-flex align-items-center mb-3">
+            <strong class="me-2 text-light" style="font-size: 1.2rem;">Rating:</strong>
+            <span class="text-warning fs-4">★</span>
+            <span class="fw-bold ms-1 text-light" style="font-size: 1.2rem;">{{accesorio?.rating}}/5</span>
+          </div>
+
+
+          <button class="btn btn-success w-100 py-2 fs-5" (click)="addToCart(); showSuccessToast(accesorio?.name)">
+            Añadir al <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<div class="container-fluid" style="background-color: #212529">
+  <div class="row justify-content-center">
+    <div class="col-12 p-0">
+      <iframe width="100%" height="750" src="https://www.youtube.com/embed/AZVHM7mH5UI" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+}
+
+@placeholder (minimum 2s){
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <img src="loading.webp" alt="loader">
+</div>
+}
+
+@loading (minimum 2s) {
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <img src="loading.webp" alt="loader">
+</div>
+}

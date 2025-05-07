@@ -1,0 +1,45 @@
+.full-width-banner{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+ 
+#background {
+    background-image: url("../../../../public/bricks.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh; 
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    flex-grow: 1; 
+}
+
+.row {
+    width: 100%;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap;
+}
+ 
+#QR {
+    transition: all 0.5s ease-in-out;
+    border-radius: 10px;
+}
+
+#QR:hover {
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+ 

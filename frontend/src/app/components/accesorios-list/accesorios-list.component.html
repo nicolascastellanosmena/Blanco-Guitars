@@ -1,0 +1,107 @@
+<!-- Listado de Accesorios -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="foto1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="foto2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="foto3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="carousel3.jpg" class="d-block w-100" alt="foto1">
+            <div class="position-absolute top-50 start-50 translate-middle text-center text-black">
+                <h1 class="fw-bold display-4" style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">
+                    Eleva tu música con los mejores accesorios
+                </h1>
+                <p class="fs-5" style="font-weight: bold; color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);">
+                    Encuentra cuerdas, estuches, pedales y mucho más
+                </p>
+            </div>
+            <button
+                class="btn btn-outline-white fw-bold position-absolute bottom-0 start-50 translate-middle-x mt-3 px-4 py-2"
+                (click)="scrollToAccesorios()">
+                DESCUBRIR AHORA
+            </button>
+        </div>
+
+        <div class="carousel-item position-relative">
+            <video #video autoplay loop playsinline class="w-100 h-100" style="object-fit: cover;"
+                src="accesorios/picks/video.mp4" preload="auto">
+                <source type="accesorios/picks/video/mp4" />
+                Tu navegador no soporta la reproducción de videos.
+            </video>
+            <div class="position-absolute top-50 start-20 translate-middle-y text-white text-start">
+                <h1 class="fw-bold display-5"
+                    style="margin-left: 1.5em; color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">
+                    Una púa de guitarra autocentrante <br> que nunca resbala, <br> reduce la acumulación de tensión <br>
+                    y se mantiene en la posición ideal.
+                </h1>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="carousel5.jpg" class="d-block w-100" alt="foto5">
+            <h1 class="position-absolute top-50 start-50 translate-middle text-center text-white"
+                style="font-size: 2.5rem; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);">
+                <span class="d-block">Descubre nuestros accesorios</span>
+                <span class="d-block">para llevar tu música al siguiente nivel.</span>
+            </h1>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+@defer (when accesorio) {
+<div id="accesorios-section" class="container mt-5 mb-5 p-0">
+    <div class="row justify-content-start mx-auto"
+        style="max-width: 1140px; width: 90%; padding-top: 20px; padding-bottom: 20px;">
+        @for (accesory of accesorio; track accesory._id) {
+        <div class="col-12 col-sm-6 col-md-4 my-2">
+            <div class="card h-100 shadow border-0"
+                style="background: linear-gradient(rgb(102, 102, 102), rgb(51, 51, 51)) 33% center; border-radius: 8px;">
+                <h5 class="card-title text-light p-2 fw-bold" style="font-size: 1.3rem;">{{accesory.name}}</h5>
+                <img routerLink="/articulo/{{accesory._id}}" [src]="accesory.image" alt="{{accesory.name}}"
+                    class="card-img-top img-fluid">
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge bg-primary d-flex align-items-center" style="font-size: 1rem;">
+                            {{accesory.rating}} <i class="fa-solid fa-star ms-1"></i>
+                        </span>
+                        <strong class="text-primary mb-0" style="font-size: 1.2rem;">{{accesory.price | currency:
+                            'EUR'}}</strong>
+                    </div>
+                    <div class="d-flex justify-content-end" >
+                        <button class="carrito" style=" background-color: transparent;" (click)="addToCart(accesory); showSuccessToast(accesory.name)">
+                            <fa-icon [icon]="faCartShopping" style="color: #ffc107;"></fa-icon>
+                          </button>
+                          
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        }
+    </div>
+</div>
+}
+
+@placeholder {
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <img src="loading.webp" alt="loader">
+</div>
+}
+
+@loading (minimum 1s) {
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <img src="loading.webp" alt="loader">
+</div>
+}

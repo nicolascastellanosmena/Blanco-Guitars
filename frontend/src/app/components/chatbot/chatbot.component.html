@@ -1,0 +1,30 @@
+<!-- Asistente virtual con el que el usuario puede interactuar -->
+<h1 class="text-center mt-3">¡Pregúntanos lo que quieras!</h1>
+<div class="chat-container mt-5 mb-5" style="box-shadow: 8px 8px 10px rgba(0,0,0,0.3);">
+  <div class="chat-box">
+     
+    @for (message of messages; track $index) {
+      <div class="message-content">{{ message.content }}</div>
+      <div class="message-time">{{ message.time }}</div>
+    }
+
+    @if (isWaiting) {
+      <div class="waiting-response">
+        <div class="dot-container">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+    }
+    
+  </div>
+
+  <div class="chat-input">
+    <input [(ngModel)]="userMessage" (keyup.enter)="sendMessage()" placeholder="Escribe tu mensaje..." />
+    <button (click)="sendMessage()">Enviar</button>
+  </div>
+</div>
+
+
+ 

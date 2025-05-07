@@ -1,0 +1,29 @@
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;  
+}
+
+.btn-create {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff62a1;  
+    color: white;
+    font-size: 18px;
+    padding: 15px 30px;
+    border-radius: 50px;  
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+ }
+
+.btn-create i {
+    font-size: 24px;  
+    margin-right: 10px;  
+}
+
+.btn-create:hover {
+    background-color: #ff3c7e;  
+}

@@ -1,0 +1,121 @@
+<!-- Página de checkout -->
+<div class="container-fluid mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="p-4 border rounded bg-light">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Dirección de facturación</h3>
+                            <label for="fname"><i class="fa fa-user"></i> Nombre Completo</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Jorge González Rubio"
+                                class="form-control mb-2">
+
+                            <label for="email"><i class="fa fa-envelope"></i> Correo</label>
+                            <input type="text" id="email" name="email" placeholder="jorgegr@gmail.com"
+                                class="form-control mb-2">
+
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Dirección</label>
+                            <input type="text" id="adr" name="address" placeholder="Dolores Marques 48"
+                                class="form-control mb-2">
+
+                            <label for="ciudad"><i class="fa fa-institution"></i> Ciudad</label>
+                            <input type="text" id="ciudad" name="ciudad" placeholder="Valencia"
+                                class="form-control mb-2">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="provincia">Provincia</label>
+                                    <input type="text" id="provincia" name="provincia" placeholder="Valencia"
+                                        class="form-control mb-2">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cp">Código Postal</label>
+                                    <input type="text" id="cp" name="cp" placeholder="46020" class="form-control mb-2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h3>Método de Pago</h3>
+                            <label for="cards">Tarjetas Admitidas</label>
+                            <div class="icon-container mb-2" id="cards">
+                                <i class="fa fa-cc-visa me-2" style="color:navy;"></i>
+                                <i class="fa fa-cc-amex me-2" style="color:blue;"></i>
+                                <i class="fa fa-cc-mastercard me-2" style="color:red;"></i>
+                                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                            </div>
+                            
+
+                            <label for="cname">Nombre en la tarjeta</label>
+                            <input type="text" id="cname" name="cardname" placeholder="Jorge González Rubio"
+                                class="form-control mb-2">
+
+                            <label for="ccnum">Número de la tarjeta</label>
+                            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"
+                                class="form-control mb-2">
+
+                            <label for="expmonth">Mes de expiración</label>
+                            <input type="text" id="expmonth" name="expmonth" placeholder="Septiembre"
+                                class="form-control mb-2">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="expyear">Año de expiración</label>
+                                    <input type="text" id="expyear" name="expyear" placeholder="2028"
+                                        class="form-control mb-2">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="352" class="form-control mb-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-check my-3">
+                        <input type="checkbox" class="form-check-input" id="sameadr" checked>
+                        <label class="form-check-label" for="sameadr">Dirección de envío igual a la de
+                            facturación</label>
+                    </div>
+
+                    <button type="button" class="btn btn-primary w-100" (click)="mostrarAlerta()">
+                        Continuar con el pago
+                      </button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="p-4 border rounded bg-light mt-4 mt-md-0">
+              <h4>Resumen
+                <span class="float-end">
+                  <i class="fa fa-shopping-cart"></i>
+                  <b> {{ getTotalItems() }}</b> <!-- Aquí mostramos el total de todos los productos (sumando las cantidades) -->
+                </span>
+              </h4>
+          
+              @for (producto of carrito; track producto._id) {
+                <div class="d-flex justify-content-between align-items-center border-bottom py-2 gap-4">
+                  <div class="flex-grow-1">
+                    <p class="text-secondary-emphasis m-0">{{ producto.name }}</p>
+                    <small class="text-muted">Cantidad: {{ producto.cantidad }}</small>
+                  </div>
+                  <p class="text-primary text-end m-0">
+                    <strong style="font-size: 15px">
+                      {{ (producto.price * producto.cantidad) | currency: 'EUR' }}
+                    </strong>
+                  </p>
+                </div>
+              }
+          
+              <p class="mt-2 d-flex justify-content-between">
+                Total <span><b>{{ precioTotal | currency: 'EUR' }}</b></span>
+              </p>
+            </div>
+          </div>
+          
+          
+    </div>
+</div>

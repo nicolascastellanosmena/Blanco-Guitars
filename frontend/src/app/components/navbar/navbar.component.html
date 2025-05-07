@@ -1,0 +1,58 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a href="/inicio">
+      <img src="logo.png" alt="logo" class="logotipo" style="width: 170px;">
+    </a>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel"
+      #offcanvas>
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <!-- Logo visible solo en pantallas pequeñas (d-block d-lg-none) -->
+          <li class="nav-item d-block d-lg-none mb-3">
+            <a href="/inicio" class="d-flex align-items-center">
+              <img src="logo.png" alt="logo" class="logotipo" style="width: 170px; height: auto;">
+            </a>
+          </li>
+          <!-- Enlaces de navegación -->
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" routerLink="/inicio" routerLinkActive="active"
+              (click)="closeMenuAndNavigate('/inicio')">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" routerLink="/guitarras" routerLinkActive="active"
+              (click)="closeMenuAndNavigate('/guitarras')">Guitarras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" routerLink="/accesorios" routerLinkActive="active"
+              (click)="closeMenuAndNavigate('/accesorios')">Accesorios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" routerLink="/sobrenosotros" routerLinkActive="active"
+              (click)="closeMenuAndNavigate('/sobrenosotros')">Sobre Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" routerLink="/contacto" routerLinkActive="active"
+              (click)="closeMenuAndNavigate('/contacto')">Contacto</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-lg-2" routerLink="/carrito" routerLinkActive="active"
+              (click)="closeMenuAndNavigate('/carrito')">Carrito</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a href="/login" class="btn">
+      <span class="btn-text-one"><i class="fa-solid fa-user-gear fs-5"></i></span>
+      <span class="btn-text-two fs-5">LOGIN</span>
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>

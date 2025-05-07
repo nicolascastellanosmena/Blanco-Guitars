@@ -1,0 +1,342 @@
+@media (max-width: 768px) {
+  .ratio {
+    height: 30vh !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .ratio {
+    height: 40vh !important;
+  }
+}
+.custom-shadow {
+  box-shadow: 1px 0rem 4rem 20px rgba(0, 0, 0, 0.3);
+}
+
+.custom-shadow-light {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-shadow-dark {
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.5);
+}
+.section {
+  max-width: 0 auto 32px;
+}
+
+.imagen_fondo {
+  background-image: url("../../../../public/banner5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center; 
+  height: 38em;
+  transition: filter 0.5s ease;
+}
+#efectosTextos{
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 1)) drop-shadow(0 0 5px rgba(0, 0, 0, 0.9));
+}
+
+@media (max-width: 767px) {
+  .imagen_fondo {
+    height: 20em;
+    background-attachment: scroll;
+  }
+}
+
+.imagen_fondo:hover {
+  filter: grayscale(70%);
+  color: aqua;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gallery-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+}
+
+.gallery {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  width: calc(100% - 80px);
+  cursor: pointer;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.gallery div {
+  display: flex;
+}
+
+.gallery span {
+  flex: 0 0 auto;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.gallery img {
+  width: 20rem;
+  height: 25rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: cover; 
+  filter: grayscale(100%);
+}
+
+.gallery img:hover {
+  filter: grayscale(0);
+  cursor: pointer;
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+#backBtn,
+#nextBtn {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1;
+}
+
+#backBtn:hover,
+#nextBtn:hover {
+  opacity: 70%;
+}
+ 
+#zIndex {
+  z-index: 10; 
+  position: relative; 
+}
+
+@media(min-width: 768px){
+  .video{
+    max-height: 70vh;
+  }
+}
+
+
+.fancy {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+ }
+ 
+ .fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: black;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+ }
+ 
+ .fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+ }
+ 
+ .fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+ }
+ 
+ .fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+ }
+ 
+ .fancy:hover {
+  color: white;
+  background: black;
+ }
+ 
+ .fancy:hover::before {
+  width: 0.9375rem;
+  background: white;
+ }
+ 
+ .fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+ }
+ 
+ .fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+ }
+ 
+ .fancy:hover .bottom-key-1,
+  .fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+ }
+ .col-lg-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;  
+  height: 100%;  
+  padding: 20px;
+}
+
+
+.faq-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.151);
+  position: relative;
+}
+.faq-button svg {
+  height: 1.5em;
+  fill: white;
+}
+.faq-button:hover svg {
+  animation: jello-vertical 0.7s both;
+}
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: -20px;
+  opacity: 0;
+  background-color: #ffe53b;
+  background-image: linear-gradient(147deg, #ffe53b 0%, #ff2525 74%);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.2s;
+  pointer-events: none;
+  letter-spacing: 0.5px;
+}
+
+.tooltip::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #ff2525;
+  background-size: 1000%;
+  background-position: center;
+  transform: rotate(45deg);
+  bottom: -15%;
+  transition-duration: 0.3s;
+}
+
+.faq-button:hover .tooltip {
+  top: -10px; /* Posiciona el tooltip justo encima */
+  left: 50%; /* Lo centra horizontalmente */
+  transform: translateX(-50%) translateY(-100%); /* Lo mueve hacia arriba y lo centra */
+  opacity: 1;
+  transition: opacity 0.1s ease, transform 0.1s ease;
+}
+
+.container.mb-4 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+}

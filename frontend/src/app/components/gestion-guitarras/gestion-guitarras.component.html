@@ -1,0 +1,60 @@
+<!-- Gestión Guitarras en Tabla -->
+@defer (when guitarra) {
+    <div class="button-container">
+        <a href="/addGuitarra" style="text-decoration: none;">
+            <button class="btn-create">
+                <i class="fa-solid fa-upload"></i> CREAR GUITARRA
+            </button>
+        </a>
+    </div>
+      
+<div class="container-fluid d-flex px-5">
+    <div id="guitarras-section" class="container mt-5 mb-5 p-0">
+        <table class="table table-striped table-bordered table-hover"
+            style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <thead class="thead-dark">
+                <tr>
+                    <th class="text-center">Nombre</th>
+                    <th class="text-center">Imagen</th>
+                    <th class="text-center">Precio</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (guitar of guitarra; track guitar._id) {
+                    <tr>
+                        <td class="align-middle text-center">{{guitar.name}}</td>
+                        <td class="align-middle text-center">
+                            <img routerLink="/producto/{{guitar._id}}" src="{{guitar.image[currentImage[guitarra.indexOf(guitar)]]}}" alt="{{guitar.name}}"
+                                class="img-fluid img-thumbnail"
+                                style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer;" />
+                        </td>
+                        <td class="align-middle text-center">{{guitar.price | currency: 'EUR'}}</td>
+                        <td class="align-middle text-center">
+                            <button routerLink="/editGuitarra/{{guitar._id}}" class="btn btn-outline-warning me-2">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button class="btn btn-outline-danger" (click)="deleteGuitarra(guitar._id)">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+}
+
+@placeholder {
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <img src="loading.webp" alt="loader">
+</div>
+}
+
+@loading (minimum 1s) {
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <img src="loading.webp" alt="loader">
+</div>
+}

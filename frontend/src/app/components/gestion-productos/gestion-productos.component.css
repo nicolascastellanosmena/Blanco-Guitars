@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .btn-custom {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn-guitarras {
+    background-color: #d63384;
+    color: #fff;
+  }
+
+  .btn-guitarras:hover {
+    background-color: #c2186b;
+    transform: translateY(-2px);
+  }
+
+  .btn-accesorios {
+    background-color: #6f42c1;
+    color: #fff;
+  }
+
+  .btn-accesorios:hover {
+    background-color: #5936a4;
+    transform: translateY(-2px);
+  }
+
+  .btn-group-custom {
+    gap: 2rem;
+  }
+
+  .welcome-text {
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .welcome-text h1 {
+    font-weight: bold;
+    font-size: 2.2rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 0.5rem;
+  }

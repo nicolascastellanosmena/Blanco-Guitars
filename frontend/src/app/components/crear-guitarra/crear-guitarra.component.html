@@ -1,0 +1,70 @@
+<!-- Página para crear una guitarra nueva o editarla -->
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg rounded-4 border-0">
+        <div class="card-body p-5">
+          <h2 class="mb-4 text-center">{{edit ? 'Editar guitarra' : 'Añadir nueva guitarra'}}</h2>
+
+          <form (ngSubmit)="onSubmit()" #guitarraForm="ngForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre</label>
+              <input type="text" id="name" name="name" class="form-control" [(ngModel)]="nuevaGuitarra.name" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="brand" class="form-label">Marca</label>
+              <input type="text" id="brand" name="brand" class="form-control" [(ngModel)]="nuevaGuitarra.brand"
+                required />
+            </div>
+
+            <div class="mb-3">
+              <label for="type" class="form-label">Tipo</label>
+              <input type="text" id="type" name="type" class="form-control" [(ngModel)]="nuevaGuitarra.type" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="price" class="form-label">Precio (€)</label>
+              <input type="number" id="price" name="price" class="form-control" [(ngModel)]="nuevaGuitarra.price"
+                required />
+            </div>
+
+            <div class="mb-3">
+              <label for="rating" class="form-label">Valoración</label>
+              <input type="number" id="rating" name="rating" class="form-control" min="0" max="5"
+                [(ngModel)]="nuevaGuitarra.rating" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Descripción</label>
+              <textarea id="description" name="description" class="form-control" rows="3"
+                [(ngModel)]="nuevaGuitarra.description" required></textarea>
+            </div>
+
+            <!-- Nuevos campos para imágenes -->
+            <div class="mb-3">
+              <label for="image1" class="form-label">URL Imagen 1</label>
+              <input type="text" id="image1" name="image1" class="form-control" [(ngModel)]="imagen1" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="image2" class="form-label">URL Imagen 2</label>
+              <input type="text" id="image2" name="image2" class="form-control" [(ngModel)]="imagen2" required />
+            </div>
+
+            <div class="mb-4">
+              <label for="image3" class="form-label">URL Imagen 3</label>
+              <input type="text" id="image3" name="image3" class="form-control" [(ngModel)]="imagen3" required />
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg" [disabled]="guitarraForm.invalid">
+                <i class="bi bi-plus-circle me-2"></i>{{edit ? 'Guardar cambios' : 'Crear guitarra'}}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

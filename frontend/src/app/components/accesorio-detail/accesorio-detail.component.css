@@ -1,0 +1,28 @@
+#img-accesorio {
+  width: 600px;
+}
+
+@media (max-width: 768px) {
+  #img-accesorio {
+    width: 50%
+  }
+}
+::ng-deep #img-accesorio .p-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  #img-accesorio {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  ::ng-deep #img-accesorio .p-image img {
+    width: 25px !important;
+    height: 25px !important;
+    object-fit: contain;
+  }
+}

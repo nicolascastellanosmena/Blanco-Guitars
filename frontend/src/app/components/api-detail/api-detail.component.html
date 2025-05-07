@@ -1,0 +1,67 @@
+<!-- Página de detalle de la guitarra -->
+@defer (when guitarra) {
+  <main class="container-fluid py-5 bg-dark m-0 p-0">
+    <div class="card shadow-lg border-0 mx-auto"
+      style="background: linear-gradient(rgb(102, 102, 102), rgb(51, 51, 51)) 33% center; max-width: 1140px; width: 90%;">
+      <div class="d-flex p-4">
+        <div class="d-flex flex-column gap-3" style="min-width: 100px;">
+          <img [src]="guitarra?.image?.[0]" class="img-thumbnail" alt="{{guitarra?.name}}"
+            style="width: 80px; cursor: pointer;" (click)="changeImage(0)">
+          <img [src]="guitarra?.image?.[1]" class="img-thumbnail" alt="{{guitarra?.name}}"
+            style="width: 80px; cursor: pointer;" (click)="changeImage(1)">
+          <img [src]="guitarra?.image?.[2]" class="img-thumbnail" alt="{{guitarra?.name}}"
+            style="width: 80px; cursor: pointer;" (click)="changeImage(2)">
+        </div>
+  
+        <div>
+          <p-image [src]="guitarra?.image?.[currentImageIndex]" alt="{{guitarra?.name}}" [preview]="true"
+            width="600px">
+          </p-image>
+        </div>
+  
+        <div>
+          <div class="card-body p-4">
+            <h2 class="card-title fw-bold mb-3 text-light" style="font-size: 2rem;">{{guitarra?.name}}</h2>
+            <h4 class="text-primary mb-3" style="font-size: 1.8rem;">{{guitarra?.price | currency: 'EUR'}}</h4>
+            <p class="card-text text-light" style="font-size: 1.2rem;">{{guitarra?.description}}</p>
+  
+            <div class="d-flex align-items-center mb-3">
+              <strong class="me-2 text-light" style="font-size: 1.2rem;">Rating:</strong>
+              <span class="text-warning fs-4">★</span>
+              <span class="fw-bold ms-1 text-light" style="font-size: 1.2rem;">{{guitarra?.rating}}/5</span>
+            </div>
+  
+            
+            
+            <button class="btn btn-success w-100 py-2 fs-5" (click)="addToCart(); showSuccessToast(guitarra?.name)">Añadir al <i class="fa-solid fa-cart-shopping"></i></button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="container-fluid" style="background-color: #212529">
+    <div class="row justify-content-center">
+      <div class="col-12 p-0">
+        <iframe width="100%" height="750" src="https://www.youtube.com/embed/NDwmeh2BVr8?si=NbGMRAqvx1OgPQH9" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+}
+
+@placeholder (minimum 2s){
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <img src="loading.webp" alt="loader">
+  </div>
+  }
+  
+  @loading (minimum 2s) {
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <img src="loading.webp" alt="loader">
+  </div>
+  }
+  
