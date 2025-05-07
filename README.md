@@ -26,4 +26,5 @@ Para poder ejecutar la aplicación, necesitas tener instalados los siguientes pr
 - npm install
 - cd backend y npm run start:dev / nest start
 - cd frontend y n g s / ng s -o
+- Para probar el login utilizar de usuario y contraseña admin para ambos campos.
 
