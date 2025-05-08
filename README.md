@@ -16,6 +16,7 @@ Este es el proyecto final de TFG para el curso de **Desarrollo de Aplicaciones W
 
 ## Requisitos previos
 > [!TIP]
+
 Para poder ejecutar la aplicación, necesitas tener instalados los siguientes programas:
 - [Node.js](https://nodejs.org/) (con npm incluido)
 - [Angular CLI](https://angular.io/cli)
