@@ -1,5 +1,5 @@
 # Proyecto Final de TFG - Desarrollo de Aplicaciones Web (DAW)
-
+> [!TIP]
 Este es el proyecto final de TFG para el curso de **Desarrollo de Aplicaciones Web (DAW)**. El proyecto está diseñado como una aplicación web completa que utiliza **Angular 18** para el frontend y **NestJS** para el backend. A continuación, se detallan los pasos necesarios para ejecutar el proyecto y probar la aplicación. La web pretende emular una tienda e-commerce para la venta de guitarras electricas, accesorios y la gestión de estas.
 
 ## Tecnologías utilizadas
@@ -27,4 +27,4 @@ Para poder ejecutar la aplicación, necesitas tener instalados los siguientes pr
 - cd backend y npm run start:dev / nest start
 - cd frontend y n g s / ng s -o
 - Para probar el login utilizar de usuario y contraseña admin para ambos campos.
-
+- crear manualmente el .env en la carpeta backend y añadir JWT_SECRET=clave
