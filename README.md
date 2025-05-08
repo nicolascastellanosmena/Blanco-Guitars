@@ -22,7 +22,8 @@ Para poder ejecutar la aplicación, necesitas tener instalados los siguientes pr
 - [NestJS CLI](https://docs.nestjs.com/)
 
 ## Instrucciones de instalación y ejecución
-
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
 - npm install
 - cd backend y npm run start:dev / nest start
 - cd frontend y n g s / ng s -o
