@@ -8,7 +8,7 @@ Este es el proyecto final de TFG para el curso de **Desarrollo de Aplicaciones W
 - **Angular 18**: Framework principal para la creación de la interfaz de usuario.
 - **Bootstrap**: Utilizado para el diseño y la estructura responsive de la aplicación.
 - **Angular Material**: Proporciona componentes de UI de alta calidad y accesibles.
-- **NGPrime**: Se utilizó para agregar componentes adicionales como tablas y gráficos.
+- **NGPrime**: Se utilizó para agregar componentes adicionales.
   
 ### Backend:
 - **NestJS**: Framework utilizado para la construcción del backend de la aplicación.
